@@ -1,5 +1,8 @@
 const express = require('express');
 const axios = require('axios');
+const dotenv = require("dotenv")
+dotenv.config()
+
 
 const app = express();
 const port = 3000;
@@ -14,7 +17,7 @@ app.post('/api/search', async (req, res) => {
         const searchText = req.body.searchText;
 
         
-        const apiKey = 'bb26f6bbca0841d1bfd54d4cbbf12670';
+        const apiKey = process.env.SL_API_KEY;
         const searchString = searchText;
         const maxResults = 5;
 
