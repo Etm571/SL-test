@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.js Server med API</title>
+    <title>SL api</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>SL API</h1>
-    <input type="text" id="searchInput" oninput="searchAPI()" placeholder="Skriv in sökterm...">
-    <div id="searchResults"></div>
-
+    <h1 id="header">SL API</h1>
+    <div class="searchBox">
+        <input type="text" id="searchInput" oninput="searchAPI()" placeholder="Sök på en plats">
+    </div>
+    <div id="searchResults">
+        <div id="items">
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

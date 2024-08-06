@@ -24,7 +24,7 @@ app.post('/api/search', async (req, res) => {
 
         //sl platsuppslag API
         const apiUrl = `https://journeyplanner.integration.sl.se/v1/typeahead.json?key=${apiKey}&searchstring=${searchString}&maxresults=${maxResults}`;
-                const apiResponse = await axios.get(apiUrl);
+        const apiResponse = await axios.get(apiUrl);
 
         res.json(apiResponse.data);
     } catch (error) {

@@ -16,7 +16,19 @@ async function searchAPI() {
     const data = await response.json();
     console.log('API Response:', data);
 
-    //frontend
-    const resultsDiv = document.getElementById('searchResults');
-    resultsDiv.innerHTML = JSON.stringify(data);
+    const resultsDiv = document.getElementById('items');
+    resultsDiv.innerHTML = ""; // Rensa tidigare resultat
+
+    if (searchText == "") {
+        resultsDiv.innerHTML = "";
+    } else {
+        const placeNames = data.ResponseData.map(place => place.Name);
+
+        // Skapa <p> element för varje platsnamn och lägg till i resultsDiv
+        placeNames.forEach(name => {
+            const p = document.createElement('p');
+            p.textContent = name;
+            resultsDiv.appendChild(p);
+        });
+    }
 }
