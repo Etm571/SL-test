@@ -4,7 +4,6 @@ async function searchAPI() {
     const tillPlats = document.getElementById('toInput').value;
     var nuvarandeBox = "";
     if (frånPlats == "")    {
-
         nuvarandeBox = tillPlats;
     }
     else{

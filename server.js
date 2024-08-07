@@ -14,11 +14,11 @@ app.use(express.static('public'));
 
 app.post('/api/search', async (req, res) => {
     try {
-        const searchText = req.body.searchText;
+        const nuvarandeBox = req.body.nuvarandeBox;
 
         
         const apiKey = process.env.SL_API_KEY;
-        const searchString = searchText;
+        const searchString = nuvarandeBox;
         const maxResults = 5;
         const stationsOnly = false;
 
