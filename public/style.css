@@ -12,7 +12,15 @@ html {
     text-align: center;
 }
 
-#searchInput {
+.labels{
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.inputFält {
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
     text-align: center;
     border: none;
     background-color: gray;
@@ -22,32 +30,46 @@ html {
     width: 300px;
 }
 
+
+
 .searchBox {
     text-align: center;
     margin-top: 30px;
 }
 
+#sök{
+
+    text-align: center;
+    margin: auto;
+}
+
+.sökKnapp{
+    text-align: center;
+}
+
+
 #searchResults {
     text-align: center;
     font-size: 20px;
-    width: 40%;
+    width: 60%;
     margin: auto;
     margin-top: 80px;
     padding-bottom: 10px;
 }
 
-
 #searchResults #items {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%; /* Säkerställ att items fyller hela bredden */
 }
 
-#items{
+#items {
     background-color: rgb(66, 65, 65);
     border-radius: 2px;
     padding-left: 5px;
     padding-right: 5px;
+    width: 100%;
 }
 
 #searchResults #items p {
@@ -55,9 +77,13 @@ html {
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin: auto;
+    margin: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #searchResults #items p:not(:last-child)::after {

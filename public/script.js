@@ -1,11 +1,21 @@
+
 async function searchAPI() {
-    const searchText = document.getElementById('searchInput').value;
+    const frånPlats = document.getElementById('fromInput').value;
+    const tillPlats = document.getElementById('toInput').value;
+    var nuvarandeBox = "";
+    if (frånPlats == "")    {
+
+        nuvarandeBox = tillPlats;
+    }
+    else{
+        nuvarandeBox = frånPlats;
+    }
     const response = await fetch('/api/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ searchText })
+        body: JSON.stringify({ nuvarandeBox })
     });
 
     if (!response.ok) {
@@ -17,15 +27,13 @@ async function searchAPI() {
     console.log('API Response:', data);
 
     const resultsDiv = document.getElementById('items');
-    resultsDiv.innerHTML = ""; // Rensa tidigare resultat
+    resultsDiv.innerHTML = "";
 
-    if (searchText == "") {
+    if (nuvarandeBox == "") {
         resultsDiv.innerHTML = "";
     } else {
-        const placeNames = data.ResponseData.map(place => place.Name);
-
-        // Skapa <p> element för varje platsnamn och lägg till i resultsDiv
-        placeNames.forEach(name => {
+        const nuvarandeBox = data.ResponseData.map(place => place.Name);
+        nuvarandeBox.forEach(name => {
             const p = document.createElement('p');
             p.textContent = name;
             resultsDiv.appendChild(p);

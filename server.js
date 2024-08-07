@@ -20,6 +20,7 @@ app.post('/api/search', async (req, res) => {
         const apiKey = process.env.SL_API_KEY;
         const searchString = searchText;
         const maxResults = 5;
+        const stationsOnly = false;
 
 
         //sl platsuppslag API
@@ -35,5 +36,5 @@ app.post('/api/search', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log('Server running at http://localhost:${port}');
 });
