@@ -30,23 +30,19 @@ html {
     width: 300px;
 }
 
-
-
 .searchBox {
     text-align: center;
     margin-top: 30px;
 }
 
-#sök{
-
+#sök {
     text-align: center;
     margin: auto;
 }
 
-.sökKnapp{
+.sökKnapp {
     text-align: center;
 }
-
 
 #searchResults {
     text-align: center;
@@ -61,7 +57,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%; /* Säkerställ att items fyller hela bredden */
+    width: 100%;
 }
 
 #items {
@@ -70,6 +66,10 @@ html {
     padding-left: 5px;
     padding-right: 5px;
     width: 100%;
+}
+
+#items p:hover{
+    background-color: rgb(43, 42, 42);
 }
 
 #searchResults #items p {
